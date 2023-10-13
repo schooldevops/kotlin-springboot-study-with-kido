@@ -13,3 +13,15 @@ spring:
   lifecycle:
 #    ??? ?? ???? gradeful ?? ???? (?? 30s --> 1m?? ??)
     timeout-per-shutdown-phase: 1m
+  config:
+    import: classpath:additional-application.properties
+app:
+  sbip:
+    ct:
+      name: CourseTracker
+      ip: 127.0.0.1
+      port: 9090
+      security:
+        enable: true
+        token: saldfksdklfsdlfkjds
+        roles: USER,ADMINS
