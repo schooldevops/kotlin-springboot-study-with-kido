@@ -26,6 +26,7 @@ class SpringBootKotlinApplication:CommandLineRunner {
 	}
 }
 
+
 fun main(args: Array<String>){
 
 	val log = logger<SpringBootKotlinApplication>()
