@@ -2,8 +2,10 @@ package com.schooldevops.springbootkotlin
 
 import com.schooldevops.springbootkotlin.configs.DBConfiguration
 import com.schooldevops.springbootkotlin.configs.logger
+import com.schooldevops.springbootkotlin.model.Course
 import com.schooldevops.springbootkotlin.properties.AppProperties
 import com.schooldevops.springbootkotlin.service.AppService
+import jakarta.validation.Validation
 import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
@@ -23,6 +25,16 @@ class SpringBootKotlinApplication:CommandLineRunner {
 	val log = logger<SpringBootKotlinApplication>()
 	override fun run(vararg args: String?) {
 		log.info(">>>>>>>>>>>>>> command line runner")
+
+		val course = Course(10, "kido", "class_a", 0, "Programmer")
+
+		val validator = Validation.buildDefaultValidatorFactory().validator
+		val validation = validator.validate(course)
+
+		validation.forEach {
+			log.error("A constraint validation has occured. Violation details: [{}]", it)
+		}
+
 	}
 }
 
