@@ -3,6 +3,7 @@ package com.schooldevops.springbootkotlin
 import com.schooldevops.springbootkotlin.configs.DBConfiguration
 import com.schooldevops.springbootkotlin.configs.logger
 import com.schooldevops.springbootkotlin.model.Course
+import com.schooldevops.springbootkotlin.model.User
 import com.schooldevops.springbootkotlin.properties.AppProperties
 import com.schooldevops.springbootkotlin.service.AppService
 import jakarta.validation.Validation
@@ -34,6 +35,31 @@ class SpringBootKotlinApplication:CommandLineRunner {
 		validation.forEach {
 			log.error("A constraint validation has occured. Violation details: [{}]", it)
 		}
+
+		val user = User("schooldevops", "password")
+		val validatedPassword = validator.validate(user)
+		validatedPassword.forEach {
+			log.error("Password Validation result: [{}]", it)
+		}
+
+		val user02 = User("schooldevops02", "Password!01")
+		val validatePassword02 = validator.validate(user02)
+		if (validatePassword02.isEmpty()) {
+			log.info("Password 02 is valid")
+		}
+
+		val user03 = User("schooldevops02", "Password!00000")
+		val validatePassword03 = validator.validate(user03)
+		validatePassword03.forEach {
+			log.error("Password Validation repeat result: [{}]", it)
+		}
+
+		val user04 = User("schooldevops02", "Password00000")
+		val validatePassword04 = validator.validate(user04)
+		validatePassword03.forEach {
+			log.error("Password Validation special result: [{}]", it)
+		}
+
 
 	}
 }
