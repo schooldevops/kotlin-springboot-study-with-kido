@@ -28,6 +28,8 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-configuration-processor")
 	implementation("org.springframework.boot:spring-boot-starter-validation")
 	implementation("org.passay:passay:1.6.0")
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	implementation("com.h2database:h2")
 }
 
 tasks.withType<KotlinCompile> {

@@ -6,7 +6,9 @@ import com.schooldevops.springbootkotlin.model.Course
 import com.schooldevops.springbootkotlin.model.User
 import com.schooldevops.springbootkotlin.properties.AppProperties
 import com.schooldevops.springbootkotlin.service.AppService
+import com.schooldevops.springbootkotlin.service.DataSourceService
 import jakarta.validation.Validation
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
@@ -24,7 +26,12 @@ import java.util.*
 @SpringBootApplication
 class SpringBootKotlinApplication:CommandLineRunner {
 	val log = logger<SpringBootKotlinApplication>()
+	@Autowired
+	private lateinit var dataSourceService: DataSourceService
 	override fun run(vararg args: String?) {
+
+		dataSourceService.loggingDataSource()
+
 		log.info(">>>>>>>>>>>>>> command line runner")
 
 		val course = Course(10, "kido", "class_a", 0, "Programmer")
