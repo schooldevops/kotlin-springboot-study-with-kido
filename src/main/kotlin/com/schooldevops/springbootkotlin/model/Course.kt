@@ -1,5 +1,6 @@
 package com.schooldevops.springbootkotlin.model
 
+import jakarta.persistence.*
 import jakarta.validation.constraints.Max
 import jakarta.validation.constraints.Min
 import jakarta.validation.constraints.NotBlank
@@ -27,12 +28,26 @@ import jakarta.validation.constraints.NotBlank
  * 		}
  */
 
-data class Course(val id: Long,
-                  val name: String,
-                  @field:NotBlank(message = "Name must not be null.")
-                  val category: String,
-                  @field:Min(value = 1, message = "A course should have a minimum of 1 rating")
-                  @field:Max(value = 5, message = "A course should have a maximum of 5 rating")
-                  val rating: Int,
-                  val description: String
-    )
+@Entity
+@Table(name = "COURSE")
+class Course(
+    @Id @Column(name = "ID") @GeneratedValue(strategy = GenerationType.IDENTITY) var id: Long?,
+    @Column(name = "NAME") var name: String,
+
+    @field:NotBlank(message = "Name must not be null.")
+    @Column(name = "CATEGORY") var category: String,
+
+    @field:Min(value = 1, message = "A course should have a minimum of 1 rating")
+    @field:Max(value = 5, message = "A course should have a maximum of 5 rating")
+    @Column(name = "RATING") var rating: Int,
+    @Column(name = "DESCRIPTION") var description: String
+    ) {
+    constructor() : this(0, "", "", 0, "") {
+
+    }
+
+    override fun equals(other: Any?): Boolean {
+        val course = other as Course
+        return this.name == course.name && this.category == course.category && this.description == course.description && this.rating == course.rating
+    }
+}

@@ -5,6 +5,7 @@ plugins {
 	id("io.spring.dependency-management") version "1.1.3"
 	kotlin("jvm") version "1.8.22"
 	kotlin("plugin.spring") version "1.8.22"
+	kotlin("plugin.allopen") version "1.3.61"
 }
 
 group = "com.schooldevops"
@@ -12,6 +13,12 @@ version = "0.0.1-SNAPSHOT"
 
 java {
 	sourceCompatibility = JavaVersion.VERSION_17
+}
+
+allOpen {
+	annotation("javax.persistence.Entity")
+	annotation("javax.persistence.Embeddable")
+	annotation("javax.persistence.MappedSuperclass")
 }
 
 repositories {
