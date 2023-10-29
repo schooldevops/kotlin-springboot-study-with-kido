@@ -30,6 +30,21 @@ import jakarta.validation.constraints.NotBlank
 
 @Entity
 @Table(name = "COURSE")
+@NamedQuery(name = "Course.findAllByCategoryAndRating",
+    query = "select c from Course c where c.category=?1 and c.rating=?2"
+)
+@NamedQuery(name = "Course.findAllByRating2",
+    query = "select c from Course c where c.rating = ?1"
+)
+//@NamedQueries({
+//    NamedQuery(name = "Course.findAllByCategoryAndRating",
+//        query = "select c from Course c where c.category=?1 and c.rating=?2"
+//    ),
+//    NamedQuery(name = "Course.findAllByRating",
+//        query = "select c from Course c where c.rating = ?1"
+//    )
+//})
+
 class Course(
     @Id @Column(name = "ID") @GeneratedValue(strategy = GenerationType.IDENTITY) var id: Long?,
     @Column(name = "NAME") var name: String,

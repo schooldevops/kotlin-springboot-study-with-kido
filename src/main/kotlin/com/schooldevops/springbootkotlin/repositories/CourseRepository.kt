@@ -53,4 +53,14 @@ interface CourseRepository : CrudRepository<Course, Long>{
      * 카테고리에 해당하는 모든 코스를 찾아서 스트림으로 반환하라.
      */
     fun streamAllByCategory(category: String): Stream<Course>
+
+    /**
+     * NamedQuery 이용한 쿼리
+     */
+    fun findAllByRating2(rating: Int): Iterable<Course>
+
+    /**
+     * NamedQuery 이용한 쿼리
+     */
+    fun findAllByCategoryAndRating(caregory: String, rating: Int): Iterable<Course>
 }
