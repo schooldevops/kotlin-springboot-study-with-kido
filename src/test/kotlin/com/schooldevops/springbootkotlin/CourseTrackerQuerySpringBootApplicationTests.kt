@@ -51,6 +51,18 @@ class CourseTrackerQuerySpringBootApplicationTests() {
 		assert(findAllByRating.count() == 2)
 	}
 
+	@Test
+	fun givenCoursesCreatedWhenLoadCoursesWithQueryThenExpectCorrectCourseDetails() {
+		courseRepository.saveAll(getCourseList());
+
+		val findAllWithCategoryAndRatingQuery = courseRepository.findAllWithCategoryAndRatingQuery("Spring", 4)
+		assert(findAllWithCategoryAndRatingQuery.count() == 1)
+
+		val findAllWithCategoryAndRatingNativeQuery =
+			courseRepository.findAllWithCategoryAndRatingNativeQuery("Spring", 4)
+		assert(findAllWithCategoryAndRatingNativeQuery.count() == 1)
+	}
+
 	private fun getCourseList(): List<Course> {
 		val course1 = Course(
 			null,

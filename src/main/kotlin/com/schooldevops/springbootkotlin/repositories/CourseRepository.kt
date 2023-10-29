@@ -1,7 +1,9 @@
 package com.schooldevops.springbootkotlin.repositories
 
 import com.schooldevops.springbootkotlin.model.Course
+import org.springframework.data.jpa.repository.Query
 import org.springframework.data.repository.CrudRepository
+import org.springframework.data.repository.query.Param
 import org.springframework.stereotype.Repository
 import java.util.stream.Stream
 
@@ -63,4 +65,13 @@ interface CourseRepository : CrudRepository<Course, Long>{
      * NamedQuery 이용한 쿼리
      */
     fun findAllByCategoryAndRating(caregory: String, rating: Int): Iterable<Course>
+
+    /**
+     * @Query 만 이용하여 조회하기
+     */
+    @Query(value = "select c from Course c where c.category = :category and c.rating = :rating")
+    fun findAllWithCategoryAndRatingQuery(@Param("category") category: String, @Param("rating") rating: Int): Iterable<Course>
+
+    @Query(value = "select * from COURSE where category=?1 and rating=?2", nativeQuery = true)
+    fun findAllWithCategoryAndRatingNativeQuery(category: String, rating: Int): Iterable<Course>
 }
