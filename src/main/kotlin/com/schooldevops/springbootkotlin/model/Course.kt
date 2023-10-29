@@ -50,4 +50,14 @@ class Course(
         val course = other as Course
         return this.name == course.name && this.category == course.category && this.description == course.description && this.rating == course.rating
     }
+
+    override fun toString(): String {
+        val sb = StringBuilder()
+        sb.append("Id: ${id}")
+        sb.append(",Name: ${name}")
+        sb.append(",Category: ${category}")
+        sb.append(",Rating: ${rating}")
+        sb.append(",Description: ${description}")
+        return sb.toString()
+    }
 }
