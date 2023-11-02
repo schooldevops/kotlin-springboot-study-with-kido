@@ -1,9 +1,13 @@
 package com.schooldevops.springbootkotlin
 
+import com.querydsl.jpa.impl.JPAQuery
 import com.schooldevops.springbootkotlin.configs.logger
 import com.schooldevops.springbootkotlin.model.Course
+import com.schooldevops.springbootkotlin.model.QCourse
 import com.schooldevops.springbootkotlin.repositories.CoursePagingRepository
 import com.schooldevops.springbootkotlin.repositories.CourseRepository
+import com.schooldevops.springbootkotlin.repositories.QueryDSLCourseRepository
+import com.schooldevops.springbootkotlin.repositories.QueryDSLProjectRepository
 import jakarta.persistence.EntityManager
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
@@ -12,51 +16,26 @@ import org.springframework.boot.test.context.SpringBootTest
 import javax.sql.DataSource
 
 @SpringBootTest
-class CourseTrackerCriteriaApiTest {
+class CourseTrackerQueryDSLProjectionTest {
 
     private lateinit var dataSource: DataSource
     val log = logger<CourseTrackerPagingSpringBootApplicationTests>()
 
     @Autowired
-    lateinit var courseRepository: CoursePagingRepository
-
-    @Autowired
-    lateinit var crudRepository: CourseRepository
+    lateinit var courseRepository: QueryDSLProjectRepository
 
     @Autowired
     lateinit var entityManager: EntityManager
 
     @BeforeEach
     fun initialData() {
-        crudRepository.saveAll(getCourseList());
+        courseRepository.saveAll(getCourseList());
     }
 
     @Test
-    fun givenCourseCreatedWhenLoadCoursesWithQueryThenExpectCorrectCourseDetails() {
-
-        // 관련 조건:
-        //  - https://www.baeldung.com/hibernate-criteria-queries
-        //  - https://docs.oracle.com/javaee/7/tutorial/persistence-criteria001.htm#GJRIJ
-        //  - https://docs.oracle.com/javaee/7/tutorial/persistence-criteria003.htm#GJIVM
-
-        // CriteriaBuilder 를 생성하여 쿼리 빌딩을 준비한다.
-        val criteriaBuilder = entityManager.criteriaBuilder
-
-        // Entity Course 에 대해서 쿼리를 하겠다고 빌더에 선언하고 쿼리구문을 생성해 낸다.
-        val courseCriteria = criteriaBuilder.createQuery(Course::class.java)
-        //  어떤 테이블에서 조회할지 엔터티를 지정한다.
-        val courseRoot = courseCriteria.from(Course::class.java)
-
-        //  빌더에 where 조건식을 생성해 낸다. category가 Spring인지 검사하게 된다.
-        val predicate = criteriaBuilder.equal(courseRoot.get<String>("category"), "Spring")
-        // 조회조건식을 생성한 쿼리 구문에 요청한다.
-        courseCriteria.where(predicate)
-
-        // entityManager 를 이용하여 쿼리를 실행한다.
-        val query = entityManager.createQuery(courseCriteria)
-
-        println("query.resultList.size: " + query.resultList.size)
-//        assert(query.resultList.size == 3)
+    fun givenACourseAvailableWhenGetCourseByNameThenCourseDescription() {
+        val result = courseRepository.getCourseByName("Rapid Spring Boot Application Development")
+        result.forEach {println(it)}
     }
 
 

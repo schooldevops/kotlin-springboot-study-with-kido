@@ -1,3 +1,4 @@
+import org.gradle.api.internal.artifacts.dsl.dependencies.DependenciesExtensionModule.module
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -6,10 +7,20 @@ plugins {
 	kotlin("jvm") version "1.8.22"
 	kotlin("plugin.spring") version "1.8.22"
 	kotlin("plugin.allopen") version "1.3.61"
+
+	// Kotlin Annotation Processing Tool
+	kotlin("kapt") version "1.8.22"
+
 }
 
 group = "com.schooldevops"
 version = "0.0.1-SNAPSHOT"
+
+configurations {
+	compileOnly {
+		extendsFrom(configurations.annotationProcessor.get())
+	}
+}
 
 java {
 	sourceCompatibility = JavaVersion.VERSION_17
@@ -37,6 +48,14 @@ dependencies {
 	implementation("org.passay:passay:1.6.0")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("com.h2database:h2")
+
+	// ---------- QueryDSL 설정하기. ------------
+	// 반드시 jakarta 를 붙여 주어야한다. spring 3.0 이후부터는 jakarta Persistent 를 쓰게된다.
+	implementation("com.querydsl:querydsl-jpa:5.0.0:jakarta")
+
+	// QueryDSL 을 사용할때 어노테이션을 처리할 수 있도록 해주는 도구이다. (Annotation Processing Tool)
+	kapt("com.querydsl:querydsl-apt:5.0.0:jakarta")
+	kapt("org.springframework.boot:spring-boot-configuration-processor")
 }
 
 tasks.withType<KotlinCompile> {

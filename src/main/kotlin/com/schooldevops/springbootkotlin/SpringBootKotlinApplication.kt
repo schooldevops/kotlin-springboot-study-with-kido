@@ -62,7 +62,7 @@ class SpringBootKotlinApplication:CommandLineRunner {
 		}
 
 		val user04 = User("schooldevops02", "Password00000")
-		val validatePassword04 = validator.validate(user04)
+//		val validatePassword04 = validator.validate(user04)
 		validatePassword03.forEach {
 			log.error("Password Validation special result: [{}]", it)
 		}
