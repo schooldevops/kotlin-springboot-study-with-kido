@@ -1,0 +1,62 @@
+2023-10-16 14:22:38.992 [ INFO] [  restartedMain] c.s.s.SpringBootKotlinApplicationKt      : Starting SpringBootKotlinApplicationKt using Java 17.0.6 with PID 29057 (/Users/1111489/Documents/01.STUDY/KOTLIN/spring-boot-kotlin/build/classes/kotlin/main started by 1111489 in /Users/1111489/Documents/01.STUDY/KOTLIN/spring-boot-kotlin)
+"2023-10-16 14:22:38.995 [DEBUG] [  restartedMain] c.s.s.SpringBootKotlinApplicationKt      : Running with Spring Boot v3.1.4, Spring v6.0.12
+"2023-10-16 14:22:38.996 [ INFO] [  restartedMain] c.s.s.SpringBootKotlinApplicationKt      : No active profile set, falling back to 1 default profile: "default"
+"2023-10-16 14:22:39.621 [ INFO] [  restartedMain] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-127.0.0.1-9999"]
+"2023-10-16 14:22:39.622 [ INFO] [  restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+"2023-10-16 14:22:39.622 [ INFO] [  restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.13]
+"2023-10-16 14:22:39.648 [ INFO] [  restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+"2023-10-16 14:22:39.970 [ INFO] [  restartedMain] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-127.0.0.1-9999"]
+"2023-10-16 14:22:39.980 [ INFO] [  restartedMain] c.s.s.e.CustomEventListeners             : ---------- 01. WebServerInitializedEvent !!
+"2023-10-16 14:22:39.980 [ INFO] [  restartedMain] c.s.s.e.CustomEventListeners             : ---------- 03. ServletWebServerInitializedEvent !!
+"2023-10-16 14:22:39.987 [ INFO] [  restartedMain] c.s.s.e.CustomEventListeners             : ---------- 02. ContextRefreshedEvent !!
+"2023-10-16 14:22:39.988 [ INFO] [  restartedMain] c.s.s.SpringBootKotlinApplicationKt      : Started SpringBootKotlinApplicationKt in 1.227 seconds (process running for 2.25)
+"2023-10-16 14:22:39.990 [ INFO] [  restartedMain] c.s.s.e.CustomEventListeners             : ---------- 04. ApplicationStartedEvent !!
+"2023-10-16 14:22:39.990 [ INFO] [  restartedMain] c.s.s.SpringBootKotlinApplication        : >>>>>>>>>>>>>> command line runner
+"2023-10-16 14:22:39.991 [ INFO] [  restartedMain] c.s.s.e.CustomEventListeners             : ---------- 05. ApplicationReadyEvent !!
+"2023-10-16 14:22:39.993 [ INFO] [  restartedMain] c.s.s.SpringBootKotlinApplication        : DB Config --------------- Username: sa, Password: pwd 
+"2023-10-16 14:22:39.994 [ INFO] [  restartedMain] c.s.s.s.AppService                       : AppProperteis: AppProperties(name=CourseTracker, ip=127.0.0.1, port=9090, security=Security(enabled=false, token=saldfksdklfsdlfkjds, roles=[USER, ADMINS]))
+"2023-10-16 14:22:40.110 [ INFO] [)-172.23.25.232] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+"2023-10-16 14:22:40.110 [ INFO] [)-172.23.25.232] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+"2023-10-16 14:22:40.111 [ INFO] [)-172.23.25.232] o.s.w.s.DispatcherServlet                : Completed initialization in 0 ms
+"2023-10-16 14:22:58.484 [ INFO] [ionShutdownHook] c.s.s.e.CustomEventListeners             : ---------- ContextClosedEvent !!
+"2023-10-16 14:23:56.130 [ INFO] [  restartedMain] c.s.s.SpringBootKotlinApplicationKt      : Starting SpringBootKotlinApplicationKt using Java 17.0.6 with PID 29064 (/Users/1111489/Documents/01.STUDY/KOTLIN/spring-boot-kotlin/build/classes/kotlin/main started by 1111489 in /Users/1111489/Documents/01.STUDY/KOTLIN/spring-boot-kotlin)
+"2023-10-16 14:23:56.134 [DEBUG] [  restartedMain] c.s.s.SpringBootKotlinApplicationKt      : Running with Spring Boot v3.1.4, Spring v6.0.12
+"2023-10-16 14:23:56.134 [ INFO] [  restartedMain] c.s.s.SpringBootKotlinApplicationKt      : No active profile set, falling back to 1 default profile: "default"
+"2023-10-16 14:23:56.766 [ INFO] [  restartedMain] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-127.0.0.1-9999"]
+"2023-10-16 14:23:56.768 [ INFO] [  restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+"2023-10-16 14:23:56.768 [ INFO] [  restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.13]
+"2023-10-16 14:23:56.807 [ INFO] [  restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+"2023-10-16 14:23:57.119 [ INFO] [  restartedMain] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-127.0.0.1-9999"]
+"2023-10-16 14:23:57.129 [ INFO] [  restartedMain] c.s.s.e.CustomEventListeners             : ---------- 01. WebServerInitializedEvent !!
+"2023-10-16 14:23:57.129 [ INFO] [  restartedMain] c.s.s.e.CustomEventListeners             : ---------- 03. ServletWebServerInitializedEvent !!
+"2023-10-16 14:23:57.136 [ INFO] [  restartedMain] c.s.s.e.CustomEventListeners             : ---------- 02. ContextRefreshedEvent !!
+"2023-10-16 14:23:57.137 [ INFO] [  restartedMain] c.s.s.SpringBootKotlinApplicationKt      : Started SpringBootKotlinApplicationKt in 1.262 seconds (process running for 52.55)
+"2023-10-16 14:23:57.139 [ INFO] [  restartedMain] c.s.s.e.CustomEventListeners             : ---------- 04. ApplicationStartedEvent !!
+"2023-10-16 14:23:57.140 [ INFO] [  restartedMain] c.s.s.SpringBootKotlinApplication        : >>>>>>>>>>>>>> command line runner
+"2023-10-16 14:23:57.140 [ INFO] [  restartedMain] c.s.s.e.CustomEventListeners             : ---------- 05. ApplicationReadyEvent !!
+"2023-10-16 14:23:57.144 [ INFO] [  restartedMain] c.s.s.SpringBootKotlinApplication        : DB Config --------------- Username: sa, Password: pwd 
+"2023-10-16 14:23:57.144 [ INFO] [  restartedMain] c.s.s.s.AppService                       : AppProperteis: AppProperties(name=CourseTracker, ip=127.0.0.1, port=9090, security=Security(enabled=false, token=saldfksdklfsdlfkjds, roles=[USER, ADMINS]))
+"2023-10-16 14:23:57.521 [ INFO] [)-172.23.25.232] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+"2023-10-16 14:23:57.521 [ INFO] [)-172.23.25.232] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+"2023-10-16 14:23:57.522 [ INFO] [)-172.23.25.232] o.s.w.s.DispatcherServlet                : Completed initialization in 1 ms
+"2023-10-16 19:11:27.998 [ INFO] [ionShutdownHook] c.s.s.e.CustomEventListeners             : ---------- ContextClosedEvent !!
+"2023-10-17 08:17:30.895 [ INFO] [  restartedMain] c.s.s.SpringBootKotlinApplicationKt      : Starting SpringBootKotlinApplicationKt using Java 17.0.6 with PID 40699 (/Users/1111489/Documents/01.STUDY/KOTLIN/spring-boot-kotlin/build/classes/kotlin/main started by 1111489 in /Users/1111489/Documents/01.STUDY/KOTLIN/spring-boot-kotlin)
+"2023-10-17 08:17:30.898 [DEBUG] [  restartedMain] c.s.s.SpringBootKotlinApplicationKt      : Running with Spring Boot v3.1.4, Spring v6.0.12
+"2023-10-17 08:17:30.899 [ INFO] [  restartedMain] c.s.s.SpringBootKotlinApplicationKt      : No active profile set, falling back to 1 default profile: "default"
+"2023-10-17 08:17:31.659 [ INFO] [  restartedMain] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-127.0.0.1-9999"]
+"2023-10-17 08:17:31.660 [ INFO] [  restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+"2023-10-17 08:17:31.660 [ INFO] [  restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.13]
+"2023-10-17 08:17:31.712 [ INFO] [  restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+"2023-10-17 08:17:32.100 [ INFO] [  restartedMain] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-127.0.0.1-9999"]
+"2023-10-17 08:17:32.112 [ INFO] [  restartedMain] c.s.s.e.CustomEventListeners             : ---------- 01. WebServerInitializedEvent !!
+"2023-10-17 08:17:32.112 [ INFO] [  restartedMain] c.s.s.e.CustomEventListeners             : ---------- 03. ServletWebServerInitializedEvent !!
+"2023-10-17 08:17:32.119 [ INFO] [  restartedMain] c.s.s.e.CustomEventListeners             : ---------- 02. ContextRefreshedEvent !!
+"2023-10-17 08:17:32.121 [ INFO] [  restartedMain] c.s.s.SpringBootKotlinApplicationKt      : Started SpringBootKotlinApplicationKt in 1.544 seconds (process running for 11.314)
+"2023-10-17 08:17:32.122 [ INFO] [  restartedMain] c.s.s.e.CustomEventListeners             : ---------- 04. ApplicationStartedEvent !!
+"2023-10-17 08:17:32.123 [ INFO] [  restartedMain] c.s.s.SpringBootKotlinApplication        : >>>>>>>>>>>>>> command line runner
+"2023-10-17 08:17:32.123 [ INFO] [  restartedMain] c.s.s.SpringBootKotlinApplication        : ---------------------::::: loggInfo of log4j2
+"2023-10-17 08:17:32.123 [ INFO] [  restartedMain] c.s.s.e.CustomEventListeners             : ---------- 05. ApplicationReadyEvent !!
+"2023-10-17 08:17:32.127 [ INFO] [  restartedMain] c.s.s.SpringBootKotlinApplication        : DB Config --------------- Username: sa, Password: pwd 
+"2023-10-17 08:17:32.127 [ INFO] [  restartedMain] c.s.s.s.AppService                       : AppProperteis: AppProperties(name=CourseTracker, ip=127.0.0.1, port=9090, security=Security(enabled=false, token=saldfksdklfsdlfkjds, roles=[USER, ADMINS]))
+"2023-10-17 08:21:11.949 [ INFO] [ionShutdownHook] c.s.s.e.CustomEventListeners             : ---------- ContextClosedEvent !!
+"
