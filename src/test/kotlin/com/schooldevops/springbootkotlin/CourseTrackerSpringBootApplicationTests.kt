@@ -2,6 +2,7 @@ package com.schooldevops.springbootkotlin
 
 import com.schooldevops.springbootkotlin.configs.logger
 import com.schooldevops.springbootkotlin.model.Course
+import com.schooldevops.springbootkotlin.repositories.AuthorRepository
 import com.schooldevops.springbootkotlin.repositories.CourseRepository
 import com.schooldevops.springbootkotlin.repositories.CustomizedCourseRepository
 import org.junit.jupiter.api.Test
@@ -19,6 +20,9 @@ class CourseTrackerSpringBootApplicationTests() {
 	@Autowired
 	lateinit var courseRepository: CustomizedCourseRepository
 
+	@Autowired
+	lateinit var authorRepository: AuthorRepository
+
 	@Test
 	fun givenCreateCourseWhenFindAllCoursesThenExpectOneCourse() {
 		val course = Course(null, "Rapid Spring Boot Application Development", "Spring", 4, "'Spring Boot gives all the power of the Spring Framework without all of the complexities")
@@ -27,6 +31,11 @@ class CourseTrackerSpringBootApplicationTests() {
 		println("findAll.count(): " + findAll.count())
 //		assert(findAll.count() == 1)
 
+	}
+
+	@Test
+	fun whenCourseAllCoursesThenExpectFiveCourses() {
+		println("find: " + authorRepository.getAuthorCourseInfo(2))
 	}
 
 

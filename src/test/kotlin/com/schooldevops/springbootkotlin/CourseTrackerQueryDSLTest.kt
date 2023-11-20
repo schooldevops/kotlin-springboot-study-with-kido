@@ -53,7 +53,6 @@ class CourseTrackerQueryDSLTest {
         allLists.forEach{println(it)}
     }
 
-
     private fun getCourseList(): List<Course> {
         val course1 = Course(
             null,
