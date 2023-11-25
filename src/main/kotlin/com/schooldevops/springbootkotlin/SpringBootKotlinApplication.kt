@@ -66,8 +66,6 @@ class SpringBootKotlinApplication:CommandLineRunner {
 		validatePassword03.forEach {
 			log.error("Password Validation special result: [{}]", it)
 		}
-
-
 	}
 }
 

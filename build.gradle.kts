@@ -56,6 +56,10 @@ dependencies {
 	// QueryDSL 을 사용할때 어노테이션을 처리할 수 있도록 해주는 도구이다. (Annotation Processing Tool)
 	kapt("com.querydsl:querydsl-apt:5.0.0:jakarta")
 	kapt("org.springframework.boot:spring-boot-configuration-processor")
+
+	// Cacheable 설정
+	implementation("org.springframework.boot:spring-boot-starter-cache")
+	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 }
 
 tasks.withType<KotlinCompile> {

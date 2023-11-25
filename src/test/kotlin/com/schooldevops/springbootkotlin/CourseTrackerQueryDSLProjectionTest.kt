@@ -8,6 +8,7 @@ import com.schooldevops.springbootkotlin.repositories.CoursePagingRepository
 import com.schooldevops.springbootkotlin.repositories.CourseRepository
 import com.schooldevops.springbootkotlin.repositories.QueryDSLCourseRepository
 import com.schooldevops.springbootkotlin.repositories.QueryDSLProjectRepository
+import com.schooldevops.springbootkotlin.service.CourseService
 import jakarta.persistence.EntityManager
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
@@ -27,6 +28,9 @@ class CourseTrackerQueryDSLProjectionTest {
     @Autowired
     lateinit var entityManager: EntityManager
 
+    @Autowired
+    lateinit var courseService: CourseService
+
     @BeforeEach
     fun initialData() {
         courseRepository.saveAll(getCourseList());
@@ -36,6 +40,41 @@ class CourseTrackerQueryDSLProjectionTest {
     fun givenACourseAvailableWhenGetCourseByNameThenCourseDescription() {
         val result = courseRepository.getCourseByName("Rapid Spring Boot Application Development")
         result.forEach {println(it)}
+    }
+
+    @Test
+    fun getCourseByName() {
+        val result = courseService.getCourceByName("Rapid Spring Boot Application Development")
+        result.forEach {println("------------------------------------------" + it)}
+        val result2 = courseService.getCourceByName("Rapid Spring Boot Application Development")
+        result2.forEach {println("2------------------------------------------" + it)}
+    }
+
+    @Test
+    fun getCourseTest01() {
+        val course: Course = Course(100, "Hello", "Spring", 10, "Hello Spring")
+        val result = courseService.getCacheTest01(course.name, course.rating)
+        println("getCourseTest01_01 ------------------------------------------" + result)
+        val result2 = courseService.getCacheTest01(course.name, course.rating)
+        println("getCourseTest01_02 ------------------------------------------" + result2)
+    }
+
+    @Test
+    fun getCourseTest02() {
+        val course: Course = Course(100, "Hello", "Spring", 10, "Hello Spring")
+        val result = courseService.getCacheTest02(course)
+        println("getCacheTest02_01 ------------------------------------------" + result)
+        val result2 = courseService.getCacheTest02(course)
+        println("getCacheTest02_02 ------------------------------------------" + result2)
+    }
+
+    @Test
+    fun getCourseTest03() {
+        val course: Course = Course(100, "Hello", "Python", 10, "Hello Spring")
+        val result = courseService.getCacheTest03(course)
+        println("getCacheTest03_01 ------------------------------------------" + result)
+        val result2 = courseService.getCacheTest03(course)
+        println("getCacheTest03_02 ------------------------------------------" + result2)
     }
 
 
