@@ -53,11 +53,19 @@ logging:
 # CacheManager 설정을 위한 옵션 지정
 
 cache:
-  storage: memory2
-  cacheNames:
-    - course
-    - author
-    - user
 #  storage: redis
+  storage: memory
+  cache-infos:
+    - cache-name: default
+      ttl: 180
+    - cache-name: course
+      ttl: 10
+    - cache-name: author
+      ttl: 86400
+    - cache-name: user
+      ttl: 60
 
+myapp:
+  title: "My Spring Boot App"
+  version: "1.0"
 

@@ -60,6 +60,9 @@ dependencies {
 	// Cacheable 설정
 	implementation("org.springframework.boot:spring-boot-starter-cache")
 	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
+
+	// Redis 설정
+	implementation("org.springframework.boot:spring-boot-starter-data-redis:2.4.3")
 }
 
 tasks.withType<KotlinCompile> {
