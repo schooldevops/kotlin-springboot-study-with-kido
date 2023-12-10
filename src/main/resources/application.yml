@@ -7,7 +7,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: '*'
+        include: 'health'
 
 spring:
   lifecycle:
@@ -68,4 +68,5 @@ cache:
 myapp:
   title: "My Spring Boot App"
   version: "1.0"
+
 

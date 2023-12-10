@@ -86,3 +86,9 @@ GET http://localhost:9999/actuator
 #    }
 #  }
 #}
+
+### health check
+GET http://localhost:9999/custom-health
+
+### Default Health Check
+GET http://localhost:9999/actuator/health
