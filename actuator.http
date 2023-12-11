@@ -92,3 +92,9 @@ GET http://localhost:9999/custom-health
 
 ### Default Health Check
 GET http://localhost:9999/actuator/health
+
+### Info check Actuator
+GET http://localhost:9999/actuator/info
+
+### Info check Actuator
+GET http://localhost:9999/custom-info

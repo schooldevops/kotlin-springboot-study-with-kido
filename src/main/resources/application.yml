@@ -7,7 +7,17 @@ management:
   endpoints:
     web:
       exposure:
-        include: 'health'
+        include: health,info
+  info:
+    env:
+      enabled: true
+
+info:
+  app:
+    name: HelloInfo
+    version: 1.0.0
+    description: Application Descriptions....
+
 
 spring:
   lifecycle:
