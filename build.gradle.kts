@@ -63,6 +63,12 @@ dependencies {
 
 	// Redis 설정
 	implementation("org.springframework.boot:spring-boot-starter-data-redis:2.4.3")
+
+//	// JMX설정
+	implementation("io.hawt:hawtio-springboot:3.0.0")
+//	implementation("org.apache.camel.springboot:camel-management-starter")
+//	implementation("org.apache.camel.springboot:camel-spring-boot-xml-starter")
+
 }
 
 tasks.withType<KotlinCompile> {

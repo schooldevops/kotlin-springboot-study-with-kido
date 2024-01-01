@@ -4,13 +4,16 @@ server:
 #  ????? ??? ?? (graceful, immediate)? ?? ??
   shutdown: graceful
 management:
-  endpoints:
-    web:
-      exposure:
-        include: health,info
   info:
     env:
       enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: hawtio,jolokia
+    jmx:
+      exposure:
+        include: logs,metrics
 
 info:
   app:
@@ -20,6 +23,8 @@ info:
 
 
 spring:
+  jmx:
+    enabled: true
   lifecycle:
 #    ??? ?? ???? gradeful ?? ???? (?? 30s --> 1m?? ??)
     timeout-per-shutdown-phase: 1m
